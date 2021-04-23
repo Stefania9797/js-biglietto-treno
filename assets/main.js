@@ -12,19 +12,18 @@ var età = parseInt(prompt("Quanti anni hai?"));
 if(isNaN(età)) {
     alert("Inserisci un età valida!")
 }
-//il prezzo del biglietto è definito in base ai km (0.21 € al km)
-var prezzo = distanza * 0.21;
+//il prezzo del biglietto, con al massimo 2 cifre decimali
+var prezzo = distanza * 0.21.toFixed(2);
 
 //sconto età
 if (età < 18)  {
     //sconto 20% minorenni
-    prezzo = prezzo - (prezzo * .2);
+    prezzo = prezzo - (prezzo * .2).toFixed(2);
   } else if (età > 65) {
       //sconto 40% over 65
-    prezzo = prezzo - (prezzo * .4);
+    prezzo = prezzo - (prezzo * .4).toFixed(2);
   }
 
   var messaggio = document.getElementById("prezzo_finale");
   //messaggio all'utente
 messaggio.innerHTML= "Il prezzo del tuo biglietto è " + prezzo + "€";
-console.log(prezzo);
