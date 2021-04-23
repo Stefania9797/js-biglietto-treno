@@ -18,10 +18,10 @@ var prezzo = distanza * 0.21.toFixed(2);
 //sconto età
 if (età < 18)  {
     //sconto 20% minorenni
-    prezzo = prezzo - (prezzo * .2).toFixed(2);
+    prezzo = (prezzo - (prezzo * .2)).toFixed(2);
   } else if (età > 65) {
       //sconto 40% over 65
-    prezzo = prezzo - (prezzo * .4).toFixed(2);
+    prezzo = (prezzo - (prezzo * .4)).toFixed(2);
   }
 
   var messaggio = document.getElementById("prezzo_finale");
